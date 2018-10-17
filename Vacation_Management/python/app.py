@@ -1,5 +1,6 @@
 import json
 import hashlib
+import webbrowser
 from flask import Flask, request, Response
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
@@ -20,7 +21,19 @@ def login():
     if username is None or password is None:
         return Response("{'error':'unauthorized'}", status=403, mimetype='application/json')
 
-
+#check user's role and open the matching page   
+def access():
+    access = request.form.get('role')
+    if access is 'admin':
+        url = "file://frontend/admin.html"
+        webbrowser.open(url,new=new)
+    if access is 'employee'
+        url = "file://frontend/employee.html"
+        webbrowser.open(url,new=new)
+    else
+        url = "file://frontend/viewer.html"
+        webbrowser.open(url,new=new)
+    
 @app.route('/user')
 def show_user():
     try:
@@ -85,6 +98,21 @@ def users():
         return Response(json.dumps(users_dict), mimetype='application/json')
     except IntegrityError:
         return json.dumps("", status=503, mimetype='application/json')
+
+    
+#Get employers' data and display it on the frontend
+#return render_template("admin.html", name="")
+
+
+#Delete an entry from database   
+$.ajax({
+    type:"DELETE",
+    url:"delete_script.php",
+    data: "userid=1",
+    success: function(msg){
+        alert("Data Deleted: " + msg);
+    }
+});
 
 @app.route('/requests')
 def requests():
