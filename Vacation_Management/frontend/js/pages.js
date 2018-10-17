@@ -6,15 +6,7 @@ function sendMail() {
 // Log out:
 function logoutFunction () {
     $("logout").load("frontend/logout.html")
-};
-
-function notifyFunction() {
-    if (confirm("Email sent!")) {
-        ;
-    } else {
-       ;
-    }
-};    
+};   
 
 //Delete a row from the table
 $(".delete-row").click(function(){
