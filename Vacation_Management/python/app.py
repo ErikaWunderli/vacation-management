@@ -1,7 +1,7 @@
 import json
 import hashlib
 import webbrowser
-from flask import Flask, request, Response
+from flask import Flask, request, Response, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 
@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def login():
-    return 'login.html'
+    return Response({'redirect_to': access()}, mimetype='application/json')
 
 
 def login():
@@ -26,13 +26,13 @@ def access():
     access = request.form.get('role')
     if access is 'admin':
         url = "file://frontend/admin.html"
-        webbrowser.open(url,new=new)
-    if access is 'employee'
+    if access is 'employee':
         url = "file://frontend/employee.html"
-        webbrowser.open(url,new=new)
-    else
+    else:
         url = "file://frontend/viewer.html"
-        webbrowser.open(url,new=new)
+
+    #return redirect(url)
+    return url
     
 @app.route('/user')
 def show_user():
@@ -70,7 +70,7 @@ def users():
             'status': 'accepted',
             'role': 'admin'
         }
-         users_dict['Homer Simpson'] = {
+        users_dict['Homer Simpson'] = {
             'id': 2,
             'email': 'homer@gmail.com',
             'status': 'accepted',
@@ -105,14 +105,14 @@ def users():
 
 
 #Delete an entry from database   
-$.ajax({
-    type:"DELETE",
-    url:"delete_script.php",
-    data: "userid=1",
-    success: function(msg){
-        alert("Data Deleted: " + msg);
-    }
-});
+# $.ajax({
+#     type:"DELETE",
+#     url:"delete_script.php",
+#     data: "userid=1",
+#     success: function(msg){
+#         alert("Data Deleted: " + msg);
+#     }
+# });
 
 @app.route('/requests')
 def requests():
