@@ -1,8 +1,7 @@
 // Send a notification via email: 
 function sendMail() {
    window.location.href = "mailto:user@example.com?subject=Subject&body=message%20goes%20here";
-}
-sendemail();
+};
 
 // Log out:
 function logoutFunction () {
