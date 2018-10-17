@@ -1,0 +1,30 @@
+Installation
+
+
+
+After unzipping, open the Command Line and navigate to the folder: Vacation_Management. Write the command:
+docker-compose build
+
+
+Then start it with:
+docker-compose up
+
+
+Open another Command Line or a powershell, and create the database:
+docker exec -it
+vacation_management_postgres_1 createdb-U postgres postgres
+
+
+Next:
+docker exec -it
+vacation_management_flask_1 bash
+
+
+Use Python to draw up the database:
+cd python
+python ./dcreate.py
+
+
+
+
+ 
