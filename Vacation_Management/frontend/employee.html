@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Employee</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+<body>
+
+<!--Nav-->
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo">Vacation Manager</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a>Status: Employee</a></li>
+                    <button id="logout" onclick="window.location.href = 'logout.html'" class="btn waves-effect waves-light" type="log-out" name="action">
+                    Log out
+                    </button>
+                </ul>
+                <ul id="nav-mobile" class="sidenav">
+                    <li><a href="#">Navbar Link</a></li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+<!--New request-->
+    
+    <section id="my-requests"> 
+    <div class="section-title">
+        <h3>Remaining days of vacation: 10 days</h3>
+    </div>
+        <div class="container">
+            <p>Make a new request</p>
+                <h5>Select the first day of your requested leave</h5>
+                    <div class="row">
+                        <div class="col 6 s6 m1"> </div>
+                            <form> 
+                                <div class="input-field"> 
+                                <input type="text" placeholder="Click here for calendar" class="datepicker">
+                                </div>
+                            </form>
+                    </div><br>
+                <h5>Select the last day of your requested leave.</h5>
+                    <div class="row">
+                        <div class="col 6 s6 m1"> </div>
+                            <form> 
+                                <div class="input-field"> 
+                                <input type="text" placeholder="Click here for calendar" class="datepicker">
+                                </div>
+                            </form>
+                    </div><br>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i>
+                </button>
+        </div>
+    </section>
+    
+<!--Requests listed-->
+        
+    <section id="Requests">
+       <div class="container"> 
+           <p>Requested vacations</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dates</th>
+                            <th>Accepted by</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>20.06.2018 - 30.06.2018</td>
+                            <td>Sen Palpatine</td>
+                            <td>Accepted</td>
+                            <td><button class="delete-row btn waves-effect waves-light" type="button" >Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td>01.09.2018 - 03.09.2018</td>
+                            <td>Sen Palpatine</td>
+                            <td>Accepted</td>
+                            <td><button class="delete-row btn waves-effect waves-light" type="button" >Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td>31.10.2018 - 04.11.2018</td>
+                            <td>Admin</td>
+                            <td>Pending</td>
+                            <td><button class="delete-row btn waves-effect waves-light" type="button">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="js/pages.js"></script>  
+
+
+</body>
+<footer>  
+    <div class="footer-copyright">
+        <div class="container">© 2018 Copyright Text
+        </div>
+    </div>
+</footer>
+</html>

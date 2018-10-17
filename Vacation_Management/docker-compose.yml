@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  flask:
+    build: ./python
+    command: python /code/python/app.py
+    ports:
+      - "80:5000"
+    volumes:
+     - .:/code
+    depends_on:
+     - postgres
+
+  postgres:
+    image: postgres:10
+    environment:
+    - POSTGRESQL_DB=postgres
+    - POSTGRESQL_USER=postgres
+    - POSTGRESQL_PASSWORD=postgres
+    expose:
+      - "5432"
